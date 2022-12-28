@@ -15,16 +15,17 @@ const passengers = [
       id: 3,
       passengerName: "Kurt Cobain",
       isVegetarianOrVegan: true,
-      connectedFlights: 3,
+      connectedFlights: 33,
     },
        {
       id: 4,
       passengerName: "Michael Jackson",
       isVegetarianOrVegan: true,
-      connectedFlights: 1,
+      connectedFlights: 100,
     },
   ];
 
+  /*
   let passengers2=[];
   let b=0;
   for(i=passengers.length;i>0;i--){
@@ -36,3 +37,24 @@ const passengers = [
     }
   }
   console.log(passengers2);
+*/
+
+  let a=[]
+  let b=0;
+  let big=passengers[0].connectedFlights;
+
+  for(i=0;i<passengers.length;i++){
+    if(passengers[i].connectedFlights>big){
+        big=passengers[i].connectedFlights;
+    }
+  }
+
+  for(i=big;i>0;i--){
+    for(j=0;j<passengers.length;j++){
+        if(passengers[j].connectedFlights==i){
+            a[b]=passengers[j];
+            b++;
+        }
+    }
+  }
+  console.log(a);
